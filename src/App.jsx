@@ -24,7 +24,7 @@ import {
 
 const notionUrl = "https://app.notion.com/p/373072f1778b811384a0e164f79b91ab";
 const githubUrl = "https://github.com/dpgns9983-dot";
-const portfolioRepoUrl = "https://github.com/dpgns9983-dot/hdc-ai-portfolio-site";
+const portfolioRepoUrl = "https://github.com/dpgns9983-dot/dpgns9983-dot.github.io";
 
 const links = [
   { label: "Notion", value: "포트폴리오 v2", icon: NotebookText, href: notionUrl },

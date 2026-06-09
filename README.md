@@ -2,7 +2,7 @@
 
 HDC AI 과정에서 진행한 프로젝트를 면접용으로 정리한 포트폴리오 웹사이트입니다.
 
-배포 주소: https://dpgns9983-dot.github.io/hdc-ai-portfolio-site/
+배포 주소: https://dpgns9983-dot.github.io/
 
 ## 구성
 
