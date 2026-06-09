@@ -38,25 +38,25 @@ const careerCards = [
   {
     title: "HDC AI 과정",
     period: "2026",
-    body: "Python 기초부터 데이터 분석, DB, ML/DL, Agent/RAG, 서비스 개발까지 이어지는 실무형 학습 흐름을 정리했습니다.",
+    body: "Python 기초부터 데이터 분석, DB, ML/DL, Agent/RAG, 서비스 개발까지 이어지는 실무형 학습 흐름",
     icon: BookOpen,
   },
   {
     title: "데이터 분석 기반",
     period: "Python / pandas / SQL",
-    body: "공공데이터와 운영 데이터를 수집, 정제, 병합하고 대시보드나 노트북 형태의 결과물로 정리했습니다.",
+    body: "공공데이터와 운영 데이터 수집, 정제, 병합, 대시보드와 노트북 결과물 정리",
     icon: BarChart3,
   },
   {
     title: "AI 서비스 연결",
     period: "Agent / RAG / Frontend",
-    body: "AI 기능을 모델 실험에서 끝내지 않고 사용자가 따라갈 수 있는 화면 흐름과 서비스 시나리오로 연결했습니다.",
+    body: "모델 실험에서 끝나지 않는 AI 기능, 사용자가 따라갈 수 있는 화면 흐름과 서비스 시나리오 연결",
     icon: BrainCircuit,
   },
   {
     title: "최종 프로젝트",
     period: "진행 전",
-    body: "아직 시작 전이므로 빈 placeholder로 남겨두고, 완성 후 대표 프로젝트 1순위로 교체할 예정입니다.",
+    body: "진행 전 placeholder, 완성 후 대표 프로젝트 1순위 교체 예정",
     icon: CalendarDays,
   },
 ];
@@ -70,14 +70,14 @@ const projects = [
     period: "2026",
     role: "요일별 데이터 전처리, week 화면 구성, 매핑 테이블 연결",
     outcome: "공공 범죄 데이터를 기준이 맞는 탐색형 대시보드 흐름으로 정리",
-    situation: "서울 범죄 통계 공공데이터를 사용해 지역, 유형, 요일별 흐름을 탐색하는 대시보드 프로젝트였습니다.",
-    problem: "원본 데이터는 기준과 표현 방식이 달라 바로 비교하기 어렵고, 단순 표만으로는 요일별 흐름을 설명하기 어려웠습니다.",
-    action: "요일별 데이터 구조를 정리하고, 서로 다른 기준을 연결하기 위한 매핑 테이블을 구성한 뒤 week 화면에서 탐색 흐름이 보이도록 정리했습니다.",
-    result: "범죄 유형과 요일 흐름을 사용자가 직접 탐색할 수 있는 대시보드 결과물로 정리했습니다.",
+    situation: "서울 범죄 통계 공공데이터 기반 지역, 유형, 요일별 흐름 탐색 대시보드 프로젝트",
+    problem: "원본 데이터 기준과 표현 방식 불일치, 단순 표 중심 결과로는 요일별 흐름 설명 어려움",
+    action: "요일별 데이터 구조 정리, 기준 연결용 매핑 테이블 구성, week 화면 탐색 흐름 설계",
+    result: "범죄 유형과 요일 흐름을 사용자가 직접 탐색 가능한 대시보드 결과물로 정리",
     artifacts: "전처리 코드, 매핑 테이블, week 테이블, Streamlit 대시보드 화면, 발표자료",
-    lesson: "대시보드는 차트를 많이 넣는 것보다 기준을 맞추고 사용자가 질문할 수 있는 탐색 흐름을 만드는 것이 먼저라는 점을 배웠습니다.",
-    boundary: "별도 경찰/범죄 데이터 분석 프로젝트가 아니라 서울 범죄 통계 대시보드 안의 작업으로 설명합니다.",
-    interviewLine: "서울 범죄 통계 데이터를 그대로 보여주기보다 기준을 맞추고 요일별 탐색 흐름으로 정리해 대시보드로 구현했습니다.",
+    lesson: "차트 개수보다 데이터 기준 정렬과 사용자 질문 흐름 설계의 중요성 확인",
+    boundary: "별도 경찰/범죄 데이터 분석 프로젝트가 아닌 서울 범죄 통계 대시보드 내부 작업",
+    interviewLine: "기준 불일치 공공데이터 정리, 요일별 탐색 흐름 설계, Streamlit 대시보드 구현",
     stack: ["Python", "pandas", "SQL", "Streamlit"],
     asset: "assets/seoul-crime-dashboard.png",
     accent: "red",
@@ -91,14 +91,14 @@ const projects = [
     period: "2026",
     role: "React/Tauri 기반 PC1 프론트엔드와 사용자 운동 흐름 구성",
     outcome: "프로필 선택부터 기준 촬영, 운동 세션, 결과 확인까지 이어지는 PC1 서비스 흐름",
-    situation: "Smart Mirror AIoT는 PC1 화면, PC3 자세 분석 서버, PC2 RAG 코칭 서버가 나뉘어 동작하는 팀 프로젝트였습니다.",
-    problem: "기능은 많았지만 사용자가 거울 앞에서 어떤 순서로 서비스를 이용해야 하는지 화면에서 명확히 보이지 않으면 단순 기능 모음처럼 보일 수 있었습니다.",
-    action: "전체 흐름을 프로필 선택, 기본 정보 입력, 기준 촬영, 루틴 확인, 운동 세션, 결과 확인, 히스토리 확인의 7단계로 나누고 PC1 프론트에서 화면 이동 조건과 상태 흐름을 연결했습니다.",
-    result: "프로필, 기준 촬영, 운동 분석, 결과 코칭이 각각 떨어진 기능이 아니라 사용자가 따라갈 수 있는 하나의 Smart Mirror 서비스 흐름으로 정리되었습니다.",
+    situation: "PC1 화면, PC3 자세 분석 서버, PC2 RAG 코칭 서버로 역할이 나뉜 Smart Mirror AIoT 팀 프로젝트",
+    problem: "기능 분산으로 인한 사용자 흐름 불명확, 거울 앞 사용 순서가 보이지 않는 단순 기능 모음 위험",
+    action: "프로필 선택, 기본 정보 입력, 기준 촬영, 루틴 확인, 운동 세션, 결과 확인, 히스토리 확인 7단계 화면 흐름 구성",
+    result: "프로필, 기준 촬영, 운동 분석, 결과 코칭을 하나의 PC1 Smart Mirror 서비스 흐름으로 연결",
     artifacts: "PC1 UI, React/Tauri 화면 흐름, AppContext 상태 관리 구조, 카메라 입력 화면, WebSocket 피드백 화면, 구조도와 발표자료",
-    lesson: "프론트엔드는 화면을 예쁘게 만드는 역할뿐 아니라 서버 데이터와 사용자 행동을 연결해 서비스의 사용 순서를 설계하는 역할이라는 점을 배웠습니다.",
-    boundary: "직접 맡은 중심은 PC1 프론트엔드이며, 자세 분석 서버와 RAG 서버 전체를 혼자 구현했다고 말하지 않습니다.",
-    interviewLine: "Smart Mirror AIoT 프로젝트에서 React와 Tauri 기반 PC1 프론트엔드를 맡아 프로필 선택부터 기준 촬영, 운동 세션, 결과 확인까지 사용자가 거울 앞에서 따라갈 수 있는 서비스 흐름으로 연결했습니다.",
+    lesson: "프론트엔드의 역할을 화면 제작이 아닌 서버 데이터와 사용자 행동을 잇는 서비스 순서 설계로 이해",
+    boundary: "직접 수행 범위는 PC1 프론트엔드 중심, 자세 분석 서버와 RAG 서버 전체 단독 구현 아님",
+    interviewLine: "React/Tauri 기반 PC1 프론트엔드 담당, 프로필 선택부터 기준 촬영, 운동 세션, 결과 확인까지 서비스 흐름 연결",
     stack: ["React", "Tauri", "TypeScript", "WebSocket"],
     asset: null,
     accent: "cyan",
@@ -112,14 +112,14 @@ const projects = [
     period: "2026",
     role: "미세먼지, 기온, 한강공원, 따릉이, 이비인후과 데이터 병합과 시각화",
     outcome: "서로 다른 공공데이터를 월/날짜 기준으로 맞춰 상관관계를 탐색",
-    situation: "서울의 미세먼지, 기온, 한강공원, 따릉이, 이비인후과 관련 데이터를 함께 보며 야외활동과 건강 지표의 관계를 탐색한 미니 프로젝트였습니다.",
-    problem: "자료 출처마다 날짜 단위, 월 기준, 컬럼명이 달라 한 번에 합쳐 비교하기 어려웠습니다.",
-    action: "각 데이터를 날짜와 월 기준으로 정리하고, 야외활동 지표와 건강 관련 지표를 병합한 뒤 시각화와 상관관계 분석으로 흐름을 확인했습니다.",
-    result: "미세먼지뿐 아니라 기온 등 다른 요인도 야외활동 지표에 함께 영향을 줄 수 있음을 분석 흐름으로 설명했습니다.",
+    situation: "서울 미세먼지, 기온, 한강공원, 따릉이, 이비인후과 데이터 기반 야외활동·건강 지표 탐색",
+    problem: "출처별 날짜 단위, 월 기준, 컬럼명 차이로 인한 병합과 비교 어려움",
+    action: "날짜와 월 기준 데이터 정리, 야외활동 지표와 건강 관련 지표 병합, 시각화와 상관관계 분석",
+    result: "미세먼지 외 기온 등 다른 요인이 야외활동 지표에 함께 작용할 가능성 확인",
     artifacts: "Jupyter Notebook, 병합 데이터, 시각화 결과, 상관관계 분석표, 발표자료",
-    lesson: "공공데이터 분석에서는 모델보다 먼저 데이터 기준을 맞추는 작업이 결과 해석의 신뢰도를 좌우한다는 점을 배웠습니다.",
-    boundary: "인과관계 증명이 아니라 공공데이터 기반 상관관계 분석으로 표현합니다.",
-    interviewLine: "여러 공공데이터를 날짜 기준으로 병합해 미세먼지와 야외활동, 건강 지표의 관계를 상관관계 중심으로 분석했습니다.",
+    lesson: "공공데이터 분석에서 모델보다 선행되는 기준 통일과 해석 가능성 확보의 중요성 확인",
+    boundary: "인과관계 증명이 아닌 공공데이터 기반 상관관계 분석",
+    interviewLine: "여러 공공데이터의 날짜 기준 병합, 미세먼지와 야외활동·건강 지표 관계의 상관관계 분석",
     stack: ["Python", "pandas", "Visualization"],
     asset: null,
     accent: "green",
@@ -133,14 +133,14 @@ const projects = [
     period: "2026",
     role: "고객, 객실, 예약 구조 분리와 SQLite/SQLAlchemy 기반 구현",
     outcome: "호텔 예약 흐름을 테이블 구조와 노트북 코드로 정리",
-    situation: "호텔 예약과 운영 흐름을 데이터베이스 구조로 표현해 보는 학습용 미니 프로젝트였습니다.",
-    problem: "호텔 운영 흐름을 코드와 DB로 표현하려면 고객, 객실, 예약 정보를 어떤 테이블로 나누고 어떻게 연결할지 먼저 정해야 했습니다.",
-    action: "고객, 객실, 예약 정보를 분리하고 각 테이블의 컬럼과 연결 방식을 고민해 Jupyter Notebook과 SQLite DB로 구현했습니다.",
-    result: "예약 관리 흐름을 테이블 구조로 바꾸며 DB 설계와 SQLAlchemy 기반 구현 흐름을 이해했습니다.",
+    situation: "호텔 예약과 운영 흐름을 데이터베이스 구조로 표현하는 학습용 미니 프로젝트",
+    problem: "고객, 객실, 예약 정보를 어떤 테이블로 나누고 어떻게 연결할지에 대한 초기 설계 필요",
+    action: "고객, 객실, 예약 정보 분리, 테이블 컬럼과 연결 방식 설계, Jupyter Notebook과 SQLite DB 구현",
+    result: "예약 관리 흐름의 테이블 구조화, DB 설계와 SQLAlchemy 구현 흐름 이해",
     artifacts: "Jupyter Notebook, SQLite DB, 테이블 구조 이미지, SQLAlchemy 구현 코드",
-    lesson: "서비스 기능을 만들기 전에 데이터가 어떤 단위로 저장되고 연결되어야 하는지 먼저 설계해야 한다는 점을 배웠습니다.",
-    boundary: "실제 배포 서비스가 아니라 학습용 DB 설계 및 분석소스 프로젝트로 설명합니다.",
-    interviewLine: "호텔 예약 흐름을 고객, 객실, 예약 테이블로 나누고 SQLite와 SQLAlchemy로 구현하며 DB 설계 기본 흐름을 익혔습니다.",
+    lesson: "서비스 기능 구현 전 데이터 저장 단위와 연결 구조 설계의 필요성 확인",
+    boundary: "실제 배포 서비스가 아닌 학습용 DB 설계 및 분석소스 프로젝트",
+    interviewLine: "호텔 예약 흐름의 고객·객실·예약 테이블 분리, SQLite와 SQLAlchemy 기반 DB 설계 실습",
     stack: ["SQLite", "SQLAlchemy", "Jupyter"],
     asset: "assets/hotel-table.jpg",
     accent: "navy",
@@ -154,14 +154,14 @@ const projects = [
     period: "2026",
     role: "서비스 시나리오 점검, 시연 흐름 정리, 차별점 정리",
     outcome: "디스코드 기반 구독관리 에이전트의 사용 흐름과 화면 결과 정리",
-    situation: "여러 구독 서비스를 한곳에서 확인하고 관리하는 흐름을 디스코드 기반 에이전트로 표현한 미니 프로젝트였습니다.",
-    problem: "구독 서비스가 많아질수록 결제 주기, 비용, 사용 여부를 한곳에서 보기 어렵고 사용자가 놓치는 지출이 생길 수 있었습니다.",
-    action: "디스코드에서 구독 정보를 확인하고 관리하는 시나리오를 정리하고, 발표 시연 중 생길 수 있는 문제와 서비스 차별점을 점검했습니다.",
-    result: "에이전트가 사용자의 구독 관리 불편을 줄일 수 있다는 사용 흐름을 발표와 화면 결과로 설명했습니다.",
+    situation: "여러 구독 서비스를 한곳에서 확인하고 관리하는 디스코드 기반 에이전트 미니 프로젝트",
+    problem: "구독 서비스 증가에 따른 결제 주기, 비용, 사용 여부 파악 어려움과 누락 지출 가능성",
+    action: "디스코드 구독 정보 확인·관리 시나리오 정리, 발표 시연 문제 점검, 서비스 차별점 정리",
+    result: "구독 관리 불편을 줄이는 에이전트 사용 흐름과 화면 결과 제시",
     artifacts: "디스코드 시연 흐름, 대시보드 화면, 에이전트 구조 설명, 발표자료",
-    lesson: "Agent 프로젝트에서는 모델 성능뿐 아니라 사용자가 어떤 상황에서 어떤 명령을 입력하고 어떤 결과를 받는지가 중요하다는 점을 배웠습니다.",
-    boundary: "백엔드와 LLM 처리 전체를 혼자 구현했다고 말하지 않고, 시연 흐름과 서비스 정리 역할을 중심으로 설명합니다.",
-    interviewLine: "구독 관리 불편을 디스코드 기반 에이전트 사용 흐름으로 풀어내고, 시연 시나리오와 서비스 차별점을 정리했습니다.",
+    lesson: "Agent 프로젝트에서 모델 성능만큼 중요한 사용자 상황, 명령 입력, 결과 반환 흐름 확인",
+    boundary: "백엔드와 LLM 처리 전체 단독 구현이 아닌 시연 흐름과 서비스 정리 역할 중심",
+    interviewLine: "구독 관리 불편을 디스코드 기반 에이전트 흐름으로 정리, 시연 시나리오와 서비스 차별점 구체화",
     stack: ["Agent", "Discord", "FastAPI"],
     asset: "assets/subscription-dashboard.png",
     altAsset: "assets/subscription-discord.png",
@@ -176,14 +176,14 @@ const projects = [
     period: "2026",
     role: "품질 검수 문제 정의, 이미지 기반 판별 가능성 실험, 대시보드 흐름 정리",
     outcome: "소규모 로스팅 업체의 품질 검수 문제를 가정한 이미지 판별 실험",
-    situation: "소규모 로스팅 업체에서 겪을 수 있는 품질 검수 문제를 가정하고 이미지 기반 판별 가능성을 실험한 미니 프로젝트였습니다.",
-    problem: "결점두나 로스팅 상태를 사람이 매번 확인하면 시간과 기준의 일관성 문제가 생길 수 있습니다.",
-    action: "결점두 판별과 EfficientNet-B0 기반 실험 흐름을 정리하고, 판별 결과를 대시보드에서 확인하는 구조로 프로젝트 범위를 잡았습니다.",
-    result: "이미지 기반 품질 검수 가능성을 확인하고, 실제 적용 전에 더 필요한 데이터와 한계를 함께 정리했습니다.",
+    situation: "소규모 로스팅 업체의 품질 검수 문제를 가정한 이미지 기반 판별 가능성 실험",
+    problem: "결점두와 로스팅 상태 수작업 확인에 따른 시간 부담과 판별 기준 일관성 문제",
+    action: "결점두 판별과 EfficientNet-B0 실험 흐름 정리, 판별 결과를 확인하는 대시보드 구조 설계",
+    result: "이미지 기반 품질 검수 가능성 확인, 실제 적용 전 필요한 데이터와 한계 정리",
     artifacts: "모델 실험 코드, 대시보드 화면, 결과 이미지, 발표 Q&A 정리",
-    lesson: "AI 모델 결과를 포트폴리오에 넣을 때는 정확도만 말하기보다 어떤 현장 문제를 가정했고 어떤 한계가 남았는지를 함께 설명해야 한다는 점을 배웠습니다.",
-    boundary: "완성된 상용 모델이 아니라 제한된 데이터셋 기반의 가능성 검토 프로젝트로 설명합니다.",
-    interviewLine: "소규모 로스팅 업체의 품질 검수 문제를 가정하고 결점두와 로스팅 상태를 이미지 기반으로 판별할 수 있는지 실험했습니다.",
+    lesson: "정확도 중심 설명보다 현장 문제 가정, 적용 가능성, 데이터 한계 병행 설명의 중요성 확인",
+    boundary: "완성된 상용 모델이 아닌 제한된 데이터셋 기반 가능성 검토 프로젝트",
+    interviewLine: "소규모 로스팅 업체 품질 검수 문제 가정, 결점두와 로스팅 상태의 이미지 기반 판별 가능성 실험",
     stack: ["Python", "EfficientNet", "Vision"],
     asset: "assets/coffee-broken-01.jpg",
     accent: "brown",
@@ -231,8 +231,8 @@ function App() {
               데이터 분석과 AI 기능을 사용자가 이해할 수 있는 서비스 흐름으로 연결하는 개발자 지망생
             </p>
             <p className="hero-description">
-              비전공자 관점에서 Python, DB, 대시보드, Agent/RAG, 프론트엔드 프로토타입을 학습했고,
-              프로젝트마다 문제 정의, 내 역할, 결과물, 과장하면 안 되는 부분을 분리해 정리했습니다.
+              비전공자 관점의 Python, DB, 대시보드, Agent/RAG, 프론트엔드 프로토타입 학습
+              프로젝트별 문제 정의, 내 역할, 결과물, 과장 금지 범위 분리 정리
             </p>
 
             <div className="link-strip" aria-label="문서와 프로필 링크">
@@ -270,7 +270,7 @@ function App() {
         <section className="career section" id="career">
           <SectionTitle
             title="Career"
-            caption="과정과 경험을 면접관이 빠르게 읽을 수 있는 흐름으로 정리했습니다."
+            caption="과정과 경험을 면접관이 빠르게 읽을 수 있는 흐름으로 정리"
           />
           <div className="career-grid">
             {careerCards.map(({ title, period, body, icon: Icon }) => (
@@ -296,7 +296,7 @@ function App() {
         <section className="projects section" id="projects">
           <SectionTitle
             title="Selected Projects"
-            caption="카드를 선택하면 문제, 역할, 결과 중심의 상세 내용이 바뀝니다."
+            caption="카드 선택 시 문제, 역할, 결과 중심 상세 내용 표시"
           />
           <div className="project-grid">
             {projects.map((project) => (
@@ -315,7 +315,7 @@ function App() {
         <section className="star section" id="star">
           <SectionTitle
             title="STAR"
-            caption="선택한 프로젝트를 문제 해결 경험으로 말할 수 있게 분해했습니다."
+            caption="선택 프로젝트를 문제 해결 경험으로 말하기 위한 STAR 분해"
           />
           <article className="star-panel">
             <div className="star-heading">
@@ -345,12 +345,12 @@ function App() {
         <section className="contact section" id="contact">
           <SectionTitle
             title="Next"
-            caption="공개 전 마지막으로 채워야 하는 항목입니다."
+            caption="공개 전 마지막으로 채워야 하는 항목"
           />
           <div className="todo-grid">
-            <Todo icon={Github} title="GitHub 링크 연결" body="6개 프로젝트 README와 공개 가능한 코드만 정리한 뒤 연결합니다." />
-            <Todo icon={BadgeCheck} title="보안 점검" body="API 키, 개인정보, 강의 원본, 대용량 원천 데이터가 공개되지 않게 확인합니다." />
-            <Todo icon={FileText} title="PDF 제출본" body="웹사이트와 Notion 정리가 끝난 뒤 3~5페이지 PDF로 요약합니다." />
+            <Todo icon={Github} title="GitHub 링크 연결" body="6개 프로젝트 README와 공개 가능한 코드 정리 후 연결" />
+            <Todo icon={BadgeCheck} title="보안 점검" body="API 키, 개인정보, 강의 원본, 대용량 원천 데이터 공개 제외 확인" />
+            <Todo icon={FileText} title="PDF 제출본" body="웹사이트와 Notion 정리 후 3~5페이지 PDF 요약" />
           </div>
         </section>
       </main>
