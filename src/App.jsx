@@ -1,7 +1,6 @@
 import React, { useMemo, useState } from "react";
 import {
   Activity,
-  ArrowUpRight,
   BadgeCheck,
   BarChart3,
   BookOpen,
@@ -9,7 +8,6 @@ import {
   CalendarDays,
   Code2,
   Coffee,
-  Database,
   FileText,
   Github,
   Hotel,
@@ -56,7 +54,7 @@ const careerCards = [
   {
     title: "최종 프로젝트",
     period: "진행 전",
-    body: "진행 전 placeholder, 완성 후 대표 프로젝트 1순위 교체 예정",
+    body: "진행 전 상태, 완성 후 대표 프로젝트 1순위 교체 예정",
     icon: CalendarDays,
   },
 ];
@@ -69,16 +67,18 @@ const projects = [
     type: "Data Dashboard",
     period: "2026",
     role: "요일별 데이터 전처리, week 화면 구성, 매핑 테이블 연결",
-    outcome: "공공 범죄 데이터를 기준이 맞는 탐색형 대시보드 흐름으로 정리",
-    situation: "서울 범죄 통계 공공데이터 기반 지역, 유형, 요일별 흐름 탐색 대시보드 프로젝트",
-    problem: "원본 데이터 기준과 표현 방식 불일치, 단순 표 중심 결과로는 요일별 흐름 설명 어려움",
-    action: "요일별 데이터 구조 정리, 기준 연결용 매핑 테이블 구성, week 화면 탐색 흐름 설계",
-    result: "범죄 유형과 요일 흐름을 사용자가 직접 탐색 가능한 대시보드 결과물로 정리",
-    artifacts: "전처리 코드, 매핑 테이블, week 테이블, Streamlit 대시보드 화면, 발표자료",
-    lesson: "차트 개수보다 데이터 기준 정렬과 사용자 질문 흐름 설계의 중요성 확인",
-    boundary: "별도 경찰/범죄 데이터 분석 프로젝트가 아닌 서울 범죄 통계 대시보드 내부 작업",
-    interviewLine: "기준 불일치 공공데이터 정리, 요일별 탐색 흐름 설계, Streamlit 대시보드 구현",
-    stack: ["Python", "pandas", "SQL", "Streamlit"],
+    outcome: "서울 범죄 통계와 실시간 혼잡도 데이터를 연결한 SafeNOVA 탐색형 대시보드",
+    problem: "경찰 통계, 서울 지역 기준, 실시간 핫스팟 데이터의 지역명과 분석 단위 불일치",
+    implementation: "mapping_fix.csv와 police_week_fix.csv 정리, SQLite 적재, ORM 연결, Streamlit multipage 화면 구성",
+    result: "지역, 시간, 요일, 핫스팟 기준으로 안전 지표를 탐색하는 대시보드 흐름",
+    artifacts: "1_preprocessing 노트북, 4_streamlit/pages/week.py, seed_all.py, crime_db.db, 대시보드 화면",
+    lesson: "분석 결과보다 데이터 기준 통일과 화면 질문 흐름 설계가 먼저라는 점 확인",
+    evidence: [
+      "SafeNOVA README의 데이터 흐름: raw data -> preprocessing -> SQLite -> ORM -> Streamlit",
+      "home, hotspot, region, time, week로 나뉜 Streamlit multipage 구조",
+      "요일별 통계, 지역별 범죄, 시간대별 위험도 분석 노트북 근거",
+    ],
+    stack: ["Python", "pandas", "SQLite", "SQLAlchemy", "Streamlit"],
     asset: "assets/seoul-crime-dashboard.png",
     accent: "red",
     icon: ShieldCheck,
@@ -90,16 +90,18 @@ const projects = [
     type: "AIoT Frontend",
     period: "2026",
     role: "React/Tauri 기반 PC1 프론트엔드와 사용자 운동 흐름 구성",
-    outcome: "프로필 선택부터 기준 촬영, 운동 세션, 결과 확인까지 이어지는 PC1 서비스 흐름",
-    situation: "PC1 화면, PC3 자세 분석 서버, PC2 RAG 코칭 서버로 역할이 나뉜 Smart Mirror AIoT 팀 프로젝트",
-    problem: "기능 분산으로 인한 사용자 흐름 불명확, 거울 앞 사용 순서가 보이지 않는 단순 기능 모음 위험",
-    action: "프로필 선택, 기본 정보 입력, 기준 촬영, 루틴 확인, 운동 세션, 결과 확인, 히스토리 확인 7단계 화면 흐름 구성",
-    result: "프로필, 기준 촬영, 운동 분석, 결과 코칭을 하나의 PC1 Smart Mirror 서비스 흐름으로 연결",
-    artifacts: "PC1 UI, React/Tauri 화면 흐름, AppContext 상태 관리 구조, 카메라 입력 화면, WebSocket 피드백 화면, 구조도와 발표자료",
-    lesson: "프론트엔드의 역할을 화면 제작이 아닌 서버 데이터와 사용자 행동을 잇는 서비스 순서 설계로 이해",
-    boundary: "직접 수행 범위는 PC1 프론트엔드 중심, 자세 분석 서버와 RAG 서버 전체 단독 구현 아님",
-    interviewLine: "React/Tauri 기반 PC1 프론트엔드 담당, 프로필 선택부터 기준 촬영, 운동 세션, 결과 확인까지 서비스 흐름 연결",
-    stack: ["React", "Tauri", "TypeScript", "WebSocket"],
+    outcome: "프로필 선택부터 결과 확인까지 이어지는 Smart Mirror PC1 서비스 화면",
+    problem: "PC1 화면, PC2 RAG 코칭, PC3 자세 분석으로 나뉜 구조에서 사용자 흐름이 끊길 위험",
+    implementation: "프로필 선택, 정보 입력, 기준 촬영, 모드 선택, 운동 세션, 결과, 히스토리 7단계 화면 구성",
+    result: "거울 앞 사용 순서와 서버 연동 상태를 한 화면 흐름으로 연결한 PC1 데스크톱 앱",
+    artifacts: "src/pages 7개 화면, AppContext 상태 관리, camera hook, api service, Tauri installer script",
+    lesson: "프론트엔드를 화면 제작이 아니라 서버 데이터와 사용자 행동을 잇는 서비스 순서 설계로 이해",
+    evidence: [
+      "React 19, TypeScript, Tauri 2, Vite 기반 PC1 데스크톱 앱 구조",
+      "ProfileSelectPage부터 HistoryPage까지 이어지는 화면 단위 구현",
+      "PC2 RAG 서버와 PC3 자세 분석 서버를 협업 연동 대상으로 분리한 구조 문서",
+    ],
+    stack: ["React", "Tauri", "TypeScript", "WebSocket", "Vite"],
     asset: null,
     accent: "cyan",
     icon: MonitorSmartphone,
@@ -111,16 +113,18 @@ const projects = [
     type: "Public Data Analysis",
     period: "2026",
     role: "미세먼지, 기온, 한강공원, 따릉이, 이비인후과 데이터 병합과 시각화",
-    outcome: "서로 다른 공공데이터를 월/날짜 기준으로 맞춰 상관관계를 탐색",
-    situation: "서울 미세먼지, 기온, 한강공원, 따릉이, 이비인후과 데이터 기반 야외활동·건강 지표 탐색",
-    problem: "출처별 날짜 단위, 월 기준, 컬럼명 차이로 인한 병합과 비교 어려움",
-    action: "날짜와 월 기준 데이터 정리, 야외활동 지표와 건강 관련 지표 병합, 시각화와 상관관계 분석",
-    result: "미세먼지 외 기온 등 다른 요인이 야외활동 지표에 함께 작용할 가능성 확인",
-    artifacts: "Jupyter Notebook, 병합 데이터, 시각화 결과, 상관관계 분석표, 발표자료",
-    lesson: "공공데이터 분석에서 모델보다 선행되는 기준 통일과 해석 가능성 확보의 중요성 확인",
-    boundary: "인과관계 증명이 아닌 공공데이터 기반 상관관계 분석",
-    interviewLine: "여러 공공데이터의 날짜 기준 병합, 미세먼지와 야외활동·건강 지표 관계의 상관관계 분석",
-    stack: ["Python", "pandas", "Visualization"],
+    outcome: "서울 야외활동은 미세먼지보다 기온 영향이 더 크게 나타난다는 분석 흐름",
+    problem: "기상, 대기오염, 한강공원, 공공자전거, 건강 데이터의 날짜 단위와 월 기준 차이",
+    implementation: "문자열 날짜를 datetime으로 변환, 월 기준 병합, 결측치 처리, 상관관계와 지도 시각화",
+    result: "기온은 야외활동 지표와 강한 양의 관계, 미세먼지는 건강 지표와 일부 관련 가능성",
+    artifacts: "Jupyter Notebook, 계절별 이용자 수 그래프, 상관관계 히트맵, GeoJSON 지도 시각화, 발표 스크립트",
+    lesson: "공공데이터 분석에서 결론보다 단위 통일, 변수 통제, 해석 범위 설정의 중요성 확인",
+    evidence: [
+      "기상청, 서울 열린데이터, 한강공원, 따릉이, 이비인후과 데이터 활용 메모",
+      "월별 평균 미세먼지, 계절별 한강공원 이용자, 기온과 따릉이 이용 분석",
+      "기온 영향이 더 크고 미세먼지와 활동 감소 관계는 약하다는 발표 결론",
+    ],
+    stack: ["Python", "pandas", "Matplotlib", "GeoJSON"],
     asset: null,
     accent: "green",
     icon: Activity,
@@ -132,16 +136,18 @@ const projects = [
     type: "DB Modeling",
     period: "2026",
     role: "고객, 객실, 예약 구조 분리와 SQLite/SQLAlchemy 기반 구현",
-    outcome: "호텔 예약 흐름을 테이블 구조와 노트북 코드로 정리",
-    situation: "호텔 예약과 운영 흐름을 데이터베이스 구조로 표현하는 학습용 미니 프로젝트",
-    problem: "고객, 객실, 예약 정보를 어떤 테이블로 나누고 어떻게 연결할지에 대한 초기 설계 필요",
-    action: "고객, 객실, 예약 정보 분리, 테이블 컬럼과 연결 방식 설계, Jupyter Notebook과 SQLite DB 구현",
-    result: "예약 관리 흐름의 테이블 구조화, DB 설계와 SQLAlchemy 구현 흐름 이해",
-    artifacts: "Jupyter Notebook, SQLite DB, 테이블 구조 이미지, SQLAlchemy 구현 코드",
-    lesson: "서비스 기능 구현 전 데이터 저장 단위와 연결 구조 설계의 필요성 확인",
-    boundary: "실제 배포 서비스가 아닌 학습용 DB 설계 및 분석소스 프로젝트",
-    interviewLine: "호텔 예약 흐름의 고객·객실·예약 테이블 분리, SQLite와 SQLAlchemy 기반 DB 설계 실습",
-    stack: ["SQLite", "SQLAlchemy", "Jupyter"],
+    outcome: "호텔 예약 흐름을 관계형 DB와 노트북 코드로 정리한 DB 모델링 실습",
+    problem: "투숙객, 객실, 예약 정보를 하나의 흐름으로 관리하기 위한 테이블 분리와 관계 설계 필요",
+    implementation: "User, Room, Reservation 모델 정의, ForeignKey와 relationship 연결, CRUD와 rollback 흐름 구현",
+    result: "예약 관리 데이터의 입력, 조회, 수정, 삭제, Pandas 출력, Matplotlib 시각화 흐름",
+    artifacts: "hotel 완료 노트북, RYN_HOTEL_fin.db, table.jpg, SQLAlchemy ORM 코드",
+    lesson: "서비스 기능 구현 전 데이터 저장 단위와 테이블 관계 설계의 필요성 확인",
+    evidence: [
+      "호텔 예약 관리 시스템 만들기 노트북 목차",
+      "User, Room, Reservation 모델과 1:N 관계 설계",
+      "SQLite DB, Pandas 출력, 시각화, 수정/삭제 실습 결과",
+    ],
+    stack: ["SQLite", "SQLAlchemy", "Jupyter", "Pandas"],
     asset: "assets/hotel-table.jpg",
     accent: "navy",
     icon: Hotel,
@@ -152,17 +158,19 @@ const projects = [
     label: "미니 프로젝트 3",
     type: "Agent Service",
     period: "2026",
-    role: "서비스 시나리오 점검, 시연 흐름 정리, 차별점 정리",
-    outcome: "디스코드 기반 구독관리 에이전트의 사용 흐름과 화면 결과 정리",
-    situation: "여러 구독 서비스를 한곳에서 확인하고 관리하는 디스코드 기반 에이전트 미니 프로젝트",
-    problem: "구독 서비스 증가에 따른 결제 주기, 비용, 사용 여부 파악 어려움과 누락 지출 가능성",
-    action: "디스코드 구독 정보 확인·관리 시나리오 정리, 발표 시연 문제 점검, 서비스 차별점 정리",
-    result: "구독 관리 불편을 줄이는 에이전트 사용 흐름과 화면 결과 제시",
-    artifacts: "디스코드 시연 흐름, 대시보드 화면, 에이전트 구조 설명, 발표자료",
-    lesson: "Agent 프로젝트에서 모델 성능만큼 중요한 사용자 상황, 명령 입력, 결과 반환 흐름 확인",
-    boundary: "백엔드와 LLM 처리 전체 단독 구현이 아닌 시연 흐름과 서비스 정리 역할 중심",
-    interviewLine: "구독 관리 불편을 디스코드 기반 에이전트 흐름으로 정리, 시연 시나리오와 서비스 차별점 구체화",
-    stack: ["Agent", "Discord", "FastAPI"],
+    role: "디스코드 봇 오류 재현, 멀티턴 상태 점검, rollback 흐름 개선 정리",
+    outcome: "구독 등록, 수정, 삭제, 조회를 자연어로 처리하는 디스코드 기반 관리 에이전트",
+    problem: "짧은 후속 입력에서 이전 서비스명이 잘못 유지되거나 rollback 의도가 정상 처리되지 않는 문제",
+    implementation: "intent 분기, ConversationState 분리, slot filling 유지, rollback 우선 판정, JSON 기반 LLM 파싱 정리",
+    result: "사용자 입력 흐름 안정화, 잘못된 서비스명으로 실행될 가능성 감소, 되돌린 항목 안내 메시지 강화",
+    artifacts: "conversation.py, workflows/state.py, workflows/rollback.py, llm.py, Discord bot, Streamlit dashboard",
+    lesson: "Agent 서비스는 모델 호출보다 대화 상태, 실패 복구, 사용자 안내 흐름이 핵심이라는 점 확인",
+    evidence: [
+      "디스코드 봇 수정 내용 정리 문서의 문제점과 개선 방향",
+      "등록, 수정, 삭제, 조회 intent 분리와 follow-up 처리 구조",
+      "FastAPI, SQLite, SQLAlchemy, Discord bot, Streamlit dashboard 연결 구조",
+    ],
+    stack: ["Agent", "Discord", "FastAPI", "SQLite", "OpenAI API"],
     asset: "assets/subscription-dashboard.png",
     altAsset: "assets/subscription-discord.png",
     accent: "purple",
@@ -175,16 +183,18 @@ const projects = [
     type: "Computer Vision",
     period: "2026",
     role: "품질 검수 문제 정의, 이미지 기반 판별 가능성 실험, 대시보드 흐름 정리",
-    outcome: "소규모 로스팅 업체의 품질 검수 문제를 가정한 이미지 판별 실험",
-    situation: "소규모 로스팅 업체의 품질 검수 문제를 가정한 이미지 기반 판별 가능성 실험",
-    problem: "결점두와 로스팅 상태 수작업 확인에 따른 시간 부담과 판별 기준 일관성 문제",
-    action: "결점두 판별과 EfficientNet-B0 실험 흐름 정리, 판별 결과를 확인하는 대시보드 구조 설계",
-    result: "이미지 기반 품질 검수 가능성 확인, 실제 적용 전 필요한 데이터와 한계 정리",
-    artifacts: "모델 실험 코드, 대시보드 화면, 결과 이미지, 발표 Q&A 정리",
-    lesson: "정확도 중심 설명보다 현장 문제 가정, 적용 가능성, 데이터 한계 병행 설명의 중요성 확인",
-    boundary: "완성된 상용 모델이 아닌 제한된 데이터셋 기반 가능성 검토 프로젝트",
-    interviewLine: "소규모 로스팅 업체 품질 검수 문제 가정, 결점두와 로스팅 상태의 이미지 기반 판별 가능성 실험",
-    stack: ["Python", "EfficientNet", "Vision"],
+    outcome: "결점두와 로스팅 상태를 이미지로 판별하는 품질 검수 프로토타입",
+    problem: "소규모 로스팅 업체의 수작업 검수 부담과 결점두·로스팅 상태 판별 기준 일관성 문제",
+    implementation: "Roboflow 데이터 기반 YOLO 계열 결점두 탐지, EfficientNet-B0 로스팅 분류, Web UI 결과 확인 흐름 구성",
+    result: "테스트 데이터 기준 로스팅 분류 성능 기록과 결점두 판별 결과 확인용 화면 구성",
+    artifacts: "main.py, train_roast_cls.py, web_app.py, ONNX/PTH checkpoint, confusion matrix, 결과 이미지",
+    lesson: "정확도 수치보다 데이터 범위, 현장 문제 정의, 실제 검수 흐름 연결의 중요성 확인",
+    evidence: [
+      "Coffee Defect Roboflow export와 YOLO 계열 탐지 실험 README",
+      "EfficientNet-B0 기반 roast classification eval log",
+      "결점두 탐지와 로스팅 분류를 나눈 Web UI 실행 흐름",
+    ],
+    stack: ["Python", "YOLO", "EfficientNet", "ONNX", "Web UI"],
     asset: "assets/coffee-broken-01.jpg",
     accent: "brown",
     icon: Coffee,
@@ -217,7 +227,7 @@ function App() {
           <a href="#home">HOME</a>
           <a href="#career">CAREER</a>
           <a href="#projects">PROJECTS</a>
-          <a href="#star">STAR</a>
+          <a href="#evidence">EVIDENCE</a>
           <a href="#contact">CONTACT</a>
         </nav>
       </header>
@@ -231,8 +241,8 @@ function App() {
               데이터 분석과 AI 기능을 사용자가 이해할 수 있는 서비스 흐름으로 연결하는 개발자 지망생
             </p>
             <p className="hero-description">
-              비전공자 관점의 Python, DB, 대시보드, Agent/RAG, 프론트엔드 프로토타입 학습
-              프로젝트별 문제 정의, 내 역할, 결과물, 과장 금지 범위 분리 정리
+              Python, DB, 대시보드, Agent/RAG, 프론트엔드 프로토타입 학습 기반
+              프로젝트별 문제, 구현 내용, 결과물, 코드 근거 중심 정리
             </p>
 
             <div className="link-strip" aria-label="문서와 프로필 링크">
@@ -262,7 +272,7 @@ function App() {
             <ul>
               <li>데이터 분석 결과를 화면과 서비스 흐름으로 정리</li>
               <li>PC1 프론트엔드, 대시보드, Agent 시나리오 경험</li>
-              <li>면접용 STAR 경험 카드와 프로젝트 근거 파일 정리 중</li>
+              <li>프로젝트별 코드, 노트북, DB, 화면 근거 기반 정리</li>
             </ul>
           </aside>
         </section>
@@ -270,7 +280,7 @@ function App() {
         <section className="career section" id="career">
           <SectionTitle
             title="Career"
-            caption="과정과 경험을 면접관이 빠르게 읽을 수 있는 흐름으로 정리"
+            caption="학습 흐름과 프로젝트 경험을 빠르게 읽을 수 있는 구조"
           />
           <div className="career-grid">
             {careerCards.map(({ title, period, body, icon: Icon }) => (
@@ -296,7 +306,7 @@ function App() {
         <section className="projects section" id="projects">
           <SectionTitle
             title="Selected Projects"
-            caption="카드 선택 시 문제, 역할, 결과 중심 상세 내용 표시"
+            caption="카드 선택 시 문제, 역할, 구현, 결과물 중심 상세 내용 표시"
           />
           <div className="project-grid">
             {projects.map((project) => (
@@ -312,32 +322,34 @@ function App() {
           <ProjectDetail project={selected} />
         </section>
 
-        <section className="star section" id="star">
+        <section className="evidence section" id="evidence">
           <SectionTitle
-            title="STAR"
-            caption="선택 프로젝트를 문제 해결 경험으로 말하기 위한 STAR 분해"
+            title="Evidence"
+            caption="선택 프로젝트에서 실제로 확인 가능한 코드, 문서, 화면 근거"
           />
-          <article className="star-panel">
-            <div className="star-heading">
+          <article className="evidence-panel">
+            <div className="evidence-heading">
               <Sparkles size={22} />
               <div>
                 <span>{selected.label}</span>
                 <h3>{selected.title}</h3>
               </div>
             </div>
-            <div className="star-grid">
-              <ExperienceBlock title="상황" body={selected.situation} />
-              <ExperienceBlock title="문제" body={selected.problem} />
-              <ExperienceBlock title="내 역할" body={selected.role} />
-              <ExperienceBlock title="행동" body={selected.action} />
-              <ExperienceBlock title="결과" body={selected.result} />
-              <ExperienceBlock title="결과물" body={selected.artifacts} />
-              <ExperienceBlock title="배운 점" body={selected.lesson} />
-              <ExperienceBlock title="과장 금지" body={selected.boundary} />
+            <div className="evidence-grid">
+              <EvidenceBlock title="문제" body={selected.problem} />
+              <EvidenceBlock title="내 역할" body={selected.role} />
+              <EvidenceBlock title="구현 내용" body={selected.implementation} />
+              <EvidenceBlock title="결과" body={selected.result} />
+              <EvidenceBlock title="대표 결과물" body={selected.artifacts} />
+              <EvidenceBlock title="배운 점" body={selected.lesson} />
             </div>
-            <div className="interview-line">
-              <strong>면접 30초 답변</strong>
-              <p>{selected.interviewLine}</p>
+            <div className="evidence-list">
+              <strong>확인 근거</strong>
+              <ul>
+                {selected.evidence.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
           </article>
         </section>
@@ -350,7 +362,7 @@ function App() {
           <div className="todo-grid">
             <Todo icon={Github} title="GitHub 링크 연결" body="6개 프로젝트 README와 공개 가능한 코드 정리 후 연결" />
             <Todo icon={BadgeCheck} title="보안 점검" body="API 키, 개인정보, 강의 원본, 대용량 원천 데이터 공개 제외 확인" />
-            <Todo icon={FileText} title="PDF 제출본" body="웹사이트와 Notion 정리 후 3~5페이지 PDF 요약" />
+            <Todo icon={FileText} title="PDF 제출본" body="웹사이트와 Notion 기반 3~5페이지 PDF 정리" />
           </div>
         </section>
       </main>
@@ -399,20 +411,16 @@ function ProjectDetail({ project }) {
         <p>{project.outcome}</p>
         <dl>
           <div>
-            <dt>상황</dt>
-            <dd>{project.situation}</dd>
+            <dt>문제</dt>
+            <dd>{project.problem}</dd>
           </div>
           <div>
             <dt>내 역할</dt>
             <dd>{project.role}</dd>
           </div>
           <div>
-            <dt>해결한 문제</dt>
-            <dd>{project.problem}</dd>
-          </div>
-          <div>
-            <dt>행동</dt>
-            <dd>{project.action}</dd>
+            <dt>구현 내용</dt>
+            <dd>{project.implementation}</dd>
           </div>
           <div>
             <dt>결과</dt>
@@ -426,15 +434,7 @@ function ProjectDetail({ project }) {
             <dt>배운 점</dt>
             <dd>{project.lesson}</dd>
           </div>
-          <div>
-            <dt>과장 금지</dt>
-            <dd>{project.boundary}</dd>
-          </div>
         </dl>
-        <div className="detail-interview-line">
-          <strong>면접 30초 답변</strong>
-          <p>{project.interviewLine}</p>
-        </div>
         <div className="stack-list">
           {project.stack.map((item) => (
             <span key={item}>{item}</span>
@@ -493,7 +493,7 @@ function ProjectVisual({ project, compact = false }) {
   );
 }
 
-function ExperienceBlock({ title, body }) {
+function EvidenceBlock({ title, body }) {
   return (
     <section>
       <h4>{title}</h4>
