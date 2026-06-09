@@ -188,6 +188,15 @@ main {
   color: var(--red-dark);
 }
 
+.link-button.is-pending {
+  color: #79808e;
+  background: #f7f8fa;
+}
+
+.link-button.is-pending svg {
+  color: #8b92a0;
+}
+
 .hero-profile {
   display: grid;
   gap: 20px;
@@ -680,6 +689,28 @@ main {
   margin: 5px 0 0;
   color: var(--muted);
   line-height: 1.68;
+}
+
+.detail-interview-line {
+  margin-top: 22px;
+  border: 1px solid #f1dcc0;
+  border-radius: 8px;
+  background: #fff8ec;
+  padding: 16px;
+}
+
+.detail-interview-line strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #543018;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.detail-interview-line p {
+  margin: 0;
+  color: #5f5145;
+  line-height: 1.7;
 }
 
 .stack-list {
