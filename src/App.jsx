@@ -89,11 +89,11 @@ const projects = [
     label: "대표 프로젝트 2",
     type: "AIoT Frontend",
     period: "2026",
-    role: "PC1 프론트엔드 담당, 프로필 선택부터 결과 확인까지 이어지는 사용자 화면 흐름 구성",
+    role: "PC1 프론트엔드 담당, 프로필 선택부터 운동 결과 확인까지 이어지는 사용자 화면 흐름 구성",
     outcome: "PC3 자세 분석 결과와 PC2 AI 코칭 문구를 사용자가 이해할 수 있는 PC1 화면 흐름으로 연결",
-    problem: "PC1 화면, PC3 자세 분석, PC2 AI 코칭 기능은 구현됐지만 합쳐 보니 사용자가 어느 단계에서 결과와 코칭 문구를 확인해야 하는지 흐름이 따로 보인 문제",
+    problem: "PC1 화면, PC3 자세 분석, PC2 AI 코칭 기능이 각각 구현됐지만 합쳐 보니 결과와 코칭 문구가 어느 화면과 단계에서 보여야 하는지 흐름이 따로 보인 문제",
     implementation: "React/Tauri 기반 화면 구성, 사용자 흐름 기준 기능 연결 단계 재정리, API 응답과 화면 표시 방식 조율, 운동 중 화면과 결과 화면 역할 분리, 목데이터 기반 카운트·오류·코칭·결과 리포트 검증",
-    result: "프로필 선택부터 결과 확인까지 이어지는 PC1 중심 엔드투엔드 시연 흐름 구현",
+    result: "프로필 선택부터 운동 결과 확인까지 이어지는 PC1 중심 엔드투엔드 시연 흐름 구현",
     artifacts: "SessionPage, ResultPage, BaselineSetupPage, API service, coaching copy, Tauri installer script",
     lesson: "AI 서비스는 모델 성능뿐 아니라 응답 속도, 구현 환경, 사용자 흐름을 함께 고려해야 완성도가 높아진다는 점 확인",
     evidence: [
@@ -361,7 +361,7 @@ function App() {
           />
           <div className="todo-grid">
             <Todo icon={Github} title="GitHub 링크 연결" body="6개 프로젝트 README와 공개 가능한 코드 정리 후 연결" />
-            <Todo icon={BadgeCheck} title="보안 점검" body="API 키, 개인정보, 강의 원본, 대용량 원천 데이터 공개 제외 확인" />
+            <Todo icon={BadgeCheck} title="보안 점검" body="민감 정보, 개인정보, 강의 원본, 대용량 원천 데이터 공개 제외 확인" />
             <Todo icon={FileText} title="PDF 제출본" body="웹사이트와 Notion 기반 3~5페이지 PDF 정리" />
           </div>
         </section>
