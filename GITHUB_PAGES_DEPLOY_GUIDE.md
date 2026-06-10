@@ -31,7 +31,7 @@ https://github.com/깃허브아이디/hdc-ai-portfolio-site.git
 아래 명령에서 `깃허브아이디` 부분만 본인 아이디로 바꿔서 PowerShell에 입력합니다.
 
 ```powershell
-cd C:\Projects\hdc-ai-portfolio-site
+cd <포트폴리오 사이트 폴더>
 git remote add origin https://github.com/깃허브아이디/hdc-ai-portfolio-site.git
 git push -u origin main
 ```
