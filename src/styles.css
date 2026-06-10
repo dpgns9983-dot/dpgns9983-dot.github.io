@@ -847,6 +847,7 @@ main {
   }
 
   .hero {
+    gap: 24px;
     min-height: auto;
     padding: 36px 0 44px;
   }
@@ -862,6 +863,10 @@ main {
   .profile-mark {
     width: 148px;
     font-size: 38px;
+  }
+
+  .hero-profile {
+    display: none;
   }
 
   .career-grid,
